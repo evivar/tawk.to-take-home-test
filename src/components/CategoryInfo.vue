@@ -59,7 +59,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  border: 1px solid #eeeeee;
+  border: 1px solid $border-color;
   border-radius: 5px;
   width: 280px;
   background: #ffffff;
@@ -73,7 +73,7 @@ export default {
     flex-direction: column;
     align-items: center;
     & > .name {
-      color: #373737;
+      color: $text-black;
       font-size: 20px;
       margin-bottom: 21px;
       text-align: center;
@@ -83,7 +83,7 @@ export default {
       font-size: 13px;
     }
     & > .updated {
-      color: #9c9aa6;
+      color: $text-gray;
       font-size: 11px;
     }
   }
@@ -96,7 +96,7 @@ export default {
     padding-right: 30px;
     & > .description {
       font-size: 13px;
-      color: #9c9aa6;
+      color: $text-gray;
       text-align: center;
     }
   }
@@ -104,7 +104,7 @@ export default {
 
 .separator {
   height: 1px;
-  background-color: #eeeeee;
+  background-color: $border-color;
   border: none;
   width: 100%;
   margin: 20px 0;

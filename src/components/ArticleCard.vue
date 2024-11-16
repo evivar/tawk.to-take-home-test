@@ -62,7 +62,7 @@ export default {
   padding-top: 35px;
   padding-bottom: 35px;
   background: white;
-  border: 1px solid #eeeeee;
+  border: 1px solid $border-color;
   border-radius: 4px;
   &--info {
     display: flex;
@@ -80,7 +80,7 @@ export default {
       & > .updated {
         font-size: 11px;
         font-weight: 400;
-        color: #9c9aa6;
+        color: $text-gray;
       }
     }
   }

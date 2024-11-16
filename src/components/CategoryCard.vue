@@ -63,7 +63,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  border: 1px solid #eeeeee;
+  border: 1px solid $border-color;
   border-radius: 5px;
   width: 315px;
   height: 220px;
@@ -77,7 +77,7 @@ export default {
     flex-direction: column;
     align-items: center;
     & > .name {
-      color: #373737;
+      color: $text-black;
       font-size: 20px;
       margin-bottom: 21px;
     }
@@ -86,7 +86,7 @@ export default {
       font-size: 13px;
     }
     & > .updated {
-      color: #9c9aa6;
+      color: $text-gray;
       font-size: 11px;
     }
   }

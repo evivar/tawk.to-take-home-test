@@ -99,7 +99,7 @@ export default {
     }
     & > .category-title {
       font-size: 13px;
-      color: #9c9aa6;
+      color: $text-gray;
     }
   }
   &--container {

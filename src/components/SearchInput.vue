@@ -29,9 +29,9 @@ export default {};
     padding: 20px 30px;
     font-size: 14px;
     font-family: inherit;
-    color: black;
+    color: $text-black;
     background-color: transparent;
-    border: 2px solid #eeeeee;
+    border: 2px solid $border-color;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     outline: none;
@@ -39,12 +39,12 @@ export default {};
   }
 
   .input-outlined:focus {
-    border-color: #eeeeee;
-    box-shadow: 0 0 4px 0 #eeeeee;
+    border-color: $border-color;
+    box-shadow: 0 0 4px 0 $border-color;
   }
 
   .input-outlined::placeholder {
-    color: #9c9aa6;
+    color: $text-gray;
     opacity: 0.6;
   }
   & > .icon-container {
