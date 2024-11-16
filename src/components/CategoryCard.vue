@@ -101,6 +101,7 @@ export default {
 
 #icon--container {
   position: relative;
+  color: $green;
   & > .icon-shadow {
     position: absolute;
     left: 7px;
