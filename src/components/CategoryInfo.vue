@@ -1,10 +1,17 @@
 <template>
   <div class="category-info">
-    <i
-      :class="getIconClass(category.icon)"
-      class="fa-fw fa-3x icon"
-      :aria-label="`Icon for ${category.title}`"
-    ></i>
+    <div id="icon--container">
+      <i
+        :class="getIconClass(category.icon)"
+        class="fa-fw fa-3x icon"
+        :aria-label="`Icon for ${category.title}`"
+      ></i>
+      <i
+        :class="getIconClass(category.icon)"
+        class="fa-fw fa-3x icon-shadow"
+        :aria-label="`Icon for ${category.title}`"
+      ></i>
+    </div>
     <div class="category-info--info">
       <span class="name">{{ category.title }}</span>
       <span class="articles">{{ category.totalArticle }} articles</span>
@@ -112,5 +119,16 @@ export default {
 
 .icon {
   color: $green;
+}
+
+#icon--container {
+  position: relative;
+  & > .icon-shadow {
+    color: $green;
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    opacity: 0.25;
+  }
 }
 </style>
