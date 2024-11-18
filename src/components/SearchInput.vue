@@ -52,6 +52,7 @@ export default {};
     background: $green;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    border: 1px solid $green;
     &--icon {
       color: white;
     }
