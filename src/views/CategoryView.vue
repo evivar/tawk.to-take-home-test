@@ -1,10 +1,6 @@
 <template>
   <div class="category">
-    <div class="category--breadcrumb">
-      <span class="all" @click="goToHome">All categories</span>
-      <i class="fa fa-chevron-right fa-fw icon" aria-label="Read"></i>
-      <span class="category-title">{{ category.title }}</span>
-    </div>
+    <breadcrumb :title="category.title" />
     <div class="category--container">
       <category-info :category="category" />
       <div class="category-container--article-list">
@@ -19,9 +15,10 @@ import ArticleCard from "../components/ArticleCard.vue";
 import axios from "axios";
 import _ from "underscore";
 import CategoryInfo from "../components/CategoryInfo.vue";
+import Breadcrumb from "../components/Breadcrumb.vue";
 
 export default {
-  components: { ArticleCard, CategoryInfo },
+  components: { ArticleCard, CategoryInfo, Breadcrumb },
   data() {
     return {
       category: {},
@@ -112,9 +109,9 @@ export default {
     align-items: start;
     justify-content: center;
     gap: 20px;
-    padding-left: 120px;
-    padding-right: 180px;
+    margin: auto auto;
     padding-bottom: 100px;
+    flex-wrap: wrap;
     &--article-list {
       display: flex;
       flex-direction: column;

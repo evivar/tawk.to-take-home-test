@@ -2,6 +2,7 @@ import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import Vue from "vue";
 import CategoryView from "../views/CategoryView.vue";
+import SearchView from "../views/SearchView.vue";
 
 Vue.use(VueRouter);
 
@@ -16,6 +17,11 @@ const routes = [
     name: "Category",
     component: CategoryView,
   },
+  {
+    path: "/search/?query=:query",
+    name: "Search",
+    component: SearchView,
+  }
 ];
 
 const router = new VueRouter({

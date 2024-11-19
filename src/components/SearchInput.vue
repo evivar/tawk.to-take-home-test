@@ -4,15 +4,31 @@
       class="input-outlined"
       type="text"
       placeholder="Search for answers"
+      v-model="searchQuery"
     />
     <div class="icon-container">
-      <i class="fa-fw fas fa-search icon icon-container--icon" :aria-label="`Search`"></i>
+      <i
+        class="fa-fw fas fa-search icon icon-container--icon"
+        :aria-label="`Search`"
+        @click="onSearchClick"
+      ></i>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      searchQuery: null,
+    };
+  },
+  methods: {
+    onSearchClick() {
+      this.$router.push({ name: "Search", params: { query: this.searchQuery.trim() } });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -48,6 +64,7 @@ export default {};
     opacity: 0.6;
   }
   & > .icon-container {
+    cursor: pointer;
     padding: 20px 30px;
     background: $green;
     border-top-right-radius: 5px;
@@ -59,7 +76,7 @@ export default {};
   }
 }
 
-.icon{
-    color: white;
+.icon {
+  color: white;
 }
 </style>

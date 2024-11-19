@@ -66,5 +66,15 @@ export default {
   padding-left: 148px;
   padding-right: 148px;
   padding-bottom: 100px;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, auto);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(1, auto);
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 </style>
