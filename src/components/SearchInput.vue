@@ -25,7 +25,9 @@ export default {
   },
   methods: {
     onSearchClick() {
-      this.$router.push({ name: "Search", params: { query: this.searchQuery.trim() } });
+      if (this.searchQuery) {
+        this.$router.push({ name: "Search", params: { query: this.searchQuery.trim() } });
+      }
     },
   },
 };

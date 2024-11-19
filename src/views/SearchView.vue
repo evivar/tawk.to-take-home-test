@@ -22,19 +22,33 @@ export default {
     };
   },
   async mounted() {
-    const query = this.$route.params.query.trim();
-    this.articles = [];
-    try {
-      const response = await axios.get(`http://localhost:9000/api/search/${query}`);
-      if (response.data) {
-        const responseFiltered = response.data.filter((article) =>
-          article.title.toLowerCase().includes(query.toLowerCase())
-        );
-        this.articles = responseFiltered;
+    await this.getArticles();
+  },
+  watch: {
+    "$route.params.query": {
+      immediate: true,
+      handler() {
+        this.getArticles();
+      },
+    },
+  },
+  methods: {
+    async getArticles() {
+      const query = this.$route.params.query;
+      console.log('query :>> ', query);
+      this.articles = [];
+      try {
+        const response = await axios.get(`http://localhost:9000/api/search/${query}`);
+        if (response.data) {
+          const responseFiltered = response.data.filter((article) =>
+            article.title.toLowerCase().includes(query.toLowerCase()) && article.status !== "archived"
+          );
+          this.articles = responseFiltered;
+        }
+      } catch (error) {
+        console.log("error :>> ", error);
       }
-    } catch (error) {
-      console.log("error :>> ", error);
-    }
+    },
   },
 };
 </script>
